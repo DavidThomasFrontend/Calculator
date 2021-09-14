@@ -1,15 +1,7 @@
-const calcScreen = document.querySelector('.calculator-screen')
-const buttons = document.querySelectorAll('button[id]')
+const numberButtons = document.querySelectorAll('.data-number'); //queryselectorall is used here because these buttons appear several times in the calculator
+const operatorButtons = document.querySelectorAll('.data-operation');
+const equalButton = document.querySelector('.data-equals');
+const deleteButton = document.querySelector('.data-delete');
+const clearButton = document.querySelector('.data-clear');
 
 
-buttons.forEach(btn => {
-    btn.addEventListener('click', function (){
-        inputNumber(this.id)
-    });
-});
-
-const inputNumber = number => {
-    const screenNumber = screenDisplay.innerHtml;
-    if (screenNumber.length < 16) // limiting the number that can be inserted so you dont excede the limit and get something like 3.333333333333333e+21
-    screenDisplay.innerHTML = parseInt(screenNumber + number).toString();
-}
